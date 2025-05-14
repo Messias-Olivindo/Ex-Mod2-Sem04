@@ -1,83 +1,33 @@
-# Boilerplate MVC em Node.js com PostgreSQL
+# Módulo 2 Aula 04 
 
-Este projeto é um boilerplate básico para uma aplicação Node.js seguindo o padrão MVC (Model-View-Controller), utilizando PostgreSQL como banco de dados.
+Explicação de alguns conceitos utilizados durante o exercício e desenvolvimento do projeto
 
-## Requisitos
+## Models
 
-- Node.js (versão X.X.X)
-- PostgreSQL (versão X.X.X)
+Models é o elemento da arquitetura MVC responsável por realizar as ações no banco de dados de acordo com as requisições passadas pelo Controller
 
-## Instalação
+- models/aluno.js
 
-1. **Clonar o repositório:**
+Responsável por fazer o CRUD na tabela aluno de acordo com o que é passado pelo controllers/alunoController.js
 
-```bash
-   git clone https://github.com/seu-usuario/seu-projeto.git
-   cd seu-projeto
-```
+- models/curso.js
 
-2. **Instalar as dependências:**
-    
-```bash
-npm install
-```
-    
-3. **Configurar o arquivo `.env`:**
-    
-Renomeie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente necessárias, como as configurações do banco de dados PostgreSQL.
-    
+Responsável por fazer o CRUD na tabela curso de acordo com o que é passado pelo controllers/cursoController.js
 
-Configuração do Banco de Dados
-------------------------------
+- models/professor.js
 
-1. **Criar banco de dados:**
-    
-    Crie um banco de dados PostgreSQL com o nome especificado no seu arquivo `.env`.
-    
-2. **Executar o script SQL de inicialização:**
-    
-```bash
-npm run init-db
-```
-    
-Isso criará a tabela `users` no seu banco de dados PostgreSQL com UUID como chave primária e inserirá alguns registros de exemplo.
-    
+Responsável por fazer o CRUDO na tabela professor de acordo com o que é passado pelo controllers/professorController.js 
 
-Funcionalidades
----------------
+## Controller
 
-* **Padrão MVC:** Estrutura organizada em Model, View e Controller.
-* **PostgreSQL:** Banco de dados relacional utilizado para persistência dos dados.
-* **UUID:** Utilização de UUID como chave primária na tabela `users`.
-* **Scripts com `nodemon`:** Utilização do `nodemon` para reiniciar automaticamente o servidor após alterações no código.
-* **Testes:** Inclui estrutura básica para testes automatizados.
+- controllers/alunoController.js
 
-Scripts Disponíveis
--------------------
+Responsável por mandar as ações que o models/aluno.js deve fazer de acordo com o que o usuário selecionar no views/alunos/index.ejs.
 
-* `npm start`: Inicia o servidor Node.js.
-* `npm run dev`: Inicia o servidor com `nodemon`, reiniciando automaticamente após alterações no código.
-* `npm run test`: Executa os testes automatizados.
-* `npm run test:coverage`: Executa os testes e gera um relatório de cobertura de código.
+- controllers/cursoController.js
 
-Estrutura de Diretórios
------------------------
+Responsável por mandar as ações que o model deve fazer de acordo com o que o usuário selecionar no views/alunos/index.ejs.
 
-* **`config/`**: Configurações do banco de dados e outras configurações do projeto.
-* **`controllers/`**: Controladores da aplicação (lógica de negócio).
-* **`models/`**: Modelos da aplicação (definições de dados e interações com o banco de dados).
-* **`routes/`**: Rotas da aplicação.
-* **`tests/`**: Testes automatizados.
-* **`views/`**: Views da aplicação (se aplicável).
+- controllers/professorController.js
 
-Contribuição
-------------
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir um issue ou enviar um pull request.
-
-Licença
--------
-
-Este projeto está licenciado sob a Licença MIT.
-
-Este README.md fornece uma visão geral clara do boilerplate, incluindo instruções de instalação, configuração do banco de dados, funcionalidades principais, scripts disponíveis, estrutura de diretórios, como contribuir e informações de licença. Certifique-se de personalizar as seções com detalhes específicos do seu projeto conforme necessário.
+Responsável por mandar as ações que o model deve fazer de acordo com o que o usuário selecionar no view.
