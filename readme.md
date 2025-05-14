@@ -26,8 +26,21 @@ Responsável por mandar as ações que o models/aluno.js deve fazer de acordo co
 
 - controllers/cursoController.js
 
-Responsável por mandar as ações que o model deve fazer de acordo com o que o usuário selecionar no views/alunos/index.ejs.
+Responsável por mandar as ações que o models/curso.js deve fazer de acordo com o que o usuário selecionar no views/alunos/index.ejs.
 
 - controllers/professorController.js
 
-Responsável por mandar as ações que o model deve fazer de acordo com o que o usuário selecionar no view.
+Responsável por mandar as ações que o models/professor.js deve fazer de acordo com o que o usuário selecionar no view/professores/index.ejs
+
+## Endpoint
+
+São os caminhos da URL para mostrar a view da aplicação de acordo com a construção da plataforma.
+
+- /alunos
+
+Mostra a views/alunos/index.ejs para mostrar as ações possíveis em relação ao aluno e curso
+  
+- /professores
+
+Mostra a views/professores/index.ejs para mostrar as ações possíveis em relação aos professores.
+  
